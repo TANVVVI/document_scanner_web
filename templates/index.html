@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocScanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="logo">📄 DocScanner</div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="container">
+
+    <!-- ========== HERO / UPLOAD SECTION ========== -->
+    <section class="card hero-card">
+        <h1>Smart Document Scanner</h1>
+        <p class="subtitle">
+            Upload an image and get a clean, scanned, top-down document automatically.
+        </p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <br><br>
+            <button type="submit">Scan Document</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </section>
+
+    <!-- ========== RESULTS ========== -->
+    {% if original and scanned %}
+    <section class="result-grid">
+
+        <div class="image-box">
+            <h3>Original Image</h3>
+            <img src="{{ original }}">
+        </div>
+
+        <div class="image-box">
+            <h3>Scanned Output</h3>
+            <img src="{{ scanned }}">
+            <a href="{{ scanned }}" download class="download-btn">Download Scan</a>
+        </div>
+
+    </section>
+    {% endif %}
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="section">
+        <h2 class="section-title">How It Works</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>1. Upload Image</h3>
+                <p>
+                    User uploads a photo of a document captured using a mobile or camera.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>2. Detect Document</h3>
+                <p>
+                    Computer vision detects the document boundary using contours and geometry.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>3. Perspective Correction</h3>
+                <p>
+                    Homography is applied to generate a top-down, distortion-free view.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>4. Enhancement & Shadow Removal</h3>
+                <p>
+                    Shadows and background noise are removed for a clean scanned output.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BENEFITS ========== -->
+    <section class="section">
+        <h2 class="section-title">Why Use DocScanner?</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>✔ Automatic Detection</h3>
+                <p>No manual cropping or adjustments required.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>✔ Handles Shadows</h3>
+                <p>Works even with uneven lighting and background noise.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>✔ Real-World Ready</h3>
+                <p>Designed for certificates, forms, notes, and printed documents.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>✔ Resume-Ready Project</h3>
+                <p>Uses industry-level computer vision techniques.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <h3>Technologies Used</h3>
+    <p>
+        Python · OpenCV · NumPy · Flask · Computer Vision · Homography · Image Processing
+    </p>
+    <p class="footer-note">© 2026 DocScanner Project</p>
+</footer>
+
+</body>
+</html>
