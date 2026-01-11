@@ -25,5 +25,24 @@ a clean scanned output.
 - Flask
 - HTML & CSS
 
+## 🖥️ Run the Project on Localhost
+
+Follow these steps to run the **Document Scanner Web Application** on your local machine.
+
+---
+
+### 🔹 Prerequisites
+Make sure you have the following installed:
+- **Python 3.8 or above**
+- **pip** (Python package manager)
+
+---
+
+### 🔹 Step 1: Clone the Repository
+```bash
+git clone https://github.com/your-username/document_scanner_web.git
+cd document_scanner_web
+
+
 ## 👤 Author
 Tanvi Salvi
