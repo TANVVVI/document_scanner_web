@@ -38,11 +38,29 @@ Make sure you have the following installed:
 
 ---
 
-### 🔹 Step 1: Clone the Repository
+### 🔹 Steps: Clone the Repository
 ```bash
 git clone https://github.com/your-username/document_scanner_web.git
 cd document_scanner_web
+### 🔹Create Virtual Environment
+python -m venv venv
 
+Activate it:
+
+Windows
+venv\Scripts\activate
+
+Linux / macOS
+source venv/bin/activate
+
+### 🔹 Install Required Dependencies
+pip install -r requirements.txt
+
+### 🔹 Run the Flask Application
+python app.py
+
+### 🔹 Open in Browser
+Running on http://127.0.0.1:5000
 
 ## 👤 Author
 Tanvi Salvi
