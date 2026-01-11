@@ -1,1 +1,1 @@
-Assets folder
+Assets/ Output folder
